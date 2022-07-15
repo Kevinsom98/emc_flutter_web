@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:news/screens/main/main_screen.dart';
+import 'package:news/screens/home/home_view.dart';
 
 import 'constants.dart';
 
@@ -13,6 +13,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      // builder: (context, widget) => ResponsiveWrapper.builder(
+      //   BouncingScrollWrapper.builder(context, widget!),
+      //   maxWidth: 1900,
+      //   minWidth: 450,
+      //   defaultScale: true,
+      //   breakpoints: [
+      //     const ResponsiveBreakpoint.resize(450, name: MOBILE),
+      //     const ResponsiveBreakpoint.autoScale(800, name: TABLET),
+      //     const ResponsiveBreakpoint.autoScale(1000, name: TABLET),
+      //     const ResponsiveBreakpoint.resize(1900, name: DESKTOP),
+      //     const ResponsiveBreakpoint.autoScale(2460, name: "4K"),
+      //   ],
+      // ),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -27,7 +40,7 @@ class MyApp extends StatelessWidget {
           headline5: TextStyle(color: kDarkBlackColor),
         ),
       ),
-      home: MainScreen(),
+      home: HomeView(),
     );
   }
 }

@@ -108,6 +108,10 @@ class BlogPostCard extends StatelessWidget {
                     ),
                   ],
                 ),
+                ElevatedButton.icon(
+                    onPressed: () {},
+                    icon: Icon(Icons.abc_outlined),
+                    label: Text('A button'))
               ],
             ),
           ),
