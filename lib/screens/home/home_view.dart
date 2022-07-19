@@ -24,14 +24,6 @@ class HomeView extends StatelessWidget {
         drawer: sizingInformation.deviceScreenType == DeviceScreenType.mobile
             ? NavigationDrawer()
             : null,
-        // backgroundColor: Colors.black,
-        // appBar: sizingInformation.deviceScreenType == DeviceScreenType.mobile
-        //     ? AppBar(
-        //         backgroundColor: Colors.transparent,
-        //         elevation: 0,
-        //         actions: [Image.asset("assets/images/guyanamap.png")],
-        //       )
-        //     : null,
         body: ScrollConfiguration(
           behavior: ScrollConfiguration.of(context).copyWith(
             dragDevices: {
@@ -116,7 +108,6 @@ class HomeView extends StatelessWidget {
                               ]),
                         ),
 
-                        // ),
                         Expanded(
                           child: ScreenTypeLayout(
                             mobile: HomeContentMobile(),
@@ -202,8 +193,6 @@ class HomeView extends StatelessWidget {
                                     ),
                                   ),
                                   Column(
-                                    // crossAxisAlignment:
-                                    //     CrossAxisAlignment.end,
                                     children: [
                                       IconButton(
                                         onPressed: null,
@@ -252,9 +241,6 @@ class HomeView extends StatelessWidget {
                                     SizedBox(
                                       width: 20,
                                     ),
-                                    // Divider(
-                                    //   color: Colors.white,
-                                    // ),
                                     SizedBox(
                                       width: 20,
                                     ),
@@ -281,16 +267,6 @@ class HomeView extends StatelessWidget {
                     ),
                   ),
                 ),
-                // Positioned.fill(
-                //   // left: Get.width / 1860,
-                //   child: Align(
-                //     alignment: Alignment.centerRight,
-                //     child: Image.asset(
-                //       'assets/images/guyanamap.png',
-                //       height: 1200,
-                //     ),
-                //   ),
-                // ),
               ]),
               Container(
                 height: sizingInformation.deviceScreenType ==
@@ -332,7 +308,75 @@ class HomeView extends StatelessWidget {
               Container(
                 height: 800,
                 color: Colors.white,
-                child: Text('See what we have been doing'),
+                child: Padding(
+                  padding: EdgeInsets.all(12),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Gallery',
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline1
+                                ?.copyWith(color: Colors.black),
+                          ),
+                          Column(
+                            children: [
+                              Text(
+                                'Take a quick tour of the various activities that the EMC \nFoundation has carried out since being established.',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText2
+                                    ?.copyWith(color: Colors.black),
+                              )
+                            ],
+                          ),
+                        ],
+                      ),
+                      Divider(
+                        indent: 10,
+                        endIndent: 10,
+                      ),
+                      SizedBox(
+                        height: 140,
+                      ),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            height: 300,
+                            width: 500,
+                            child: Image.asset(
+                              'assets/images/background.png',
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 40,
+                          ),
+                          Container(
+                            height: 300,
+                            width: 500,
+                            child: Image.asset(
+                              'assets/images/background.png',
+                              fit: BoxFit.fill,
+                            ),
+                          )
+                        ],
+                      ),
+                      SizedBox(
+                        height: 40,
+                      ),
+                      ElevatedButton(onPressed: () {}, child: Text('View more'))
+                    ],
+                  ),
+                ),
               ),
               Container(
                 child: Footer(),
